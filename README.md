@@ -1,9 +1,11 @@
 # spinner
 
-Animated progress spinners for your console.
-
 [![Package Version](https://img.shields.io/hexpm/v/spinner)](https://hex.pm/packages/spinner)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/spinner/)
+
+![The spinner running in a terminal](spinner.gif)
+
+Animated progress spinners for your console.
 
 Works on both Erlang and JavaScript runtimes.
 ```sh
