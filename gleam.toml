@@ -11,10 +11,10 @@ links = [
 
 [dependencies]
 gleam_stdlib = "~> 0.34 or ~> 1.0"
-gleam_erlang = "~> 0.24"
 gleam_community_ansi = "~> 1.3"
 glearray = "~> 0.2"
 repeatedly = "~> 2.1"
 
 [dev-dependencies]
 gleeunit = "~> 1.0"
+gleam_erlang = "~> 0.24"
