@@ -13,6 +13,7 @@ gleam add spinner
 ```
 ```gleam
 import spinner
+import gleam/io
 import gleam_community/ansi
 
 pub fn main() {
@@ -28,6 +29,7 @@ pub fn main() {
 
   // Finish it when you're done
   spinner.stop(spinner)
+  io.println("Done!")
 }
 ```
 
