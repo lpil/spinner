@@ -3,6 +3,10 @@ import repeatedly.{type Repeater}
 import gleam_community/ansi
 import gleam/io
 
+const clear_line_code = "\u{001b}[2K"
+
+const go_to_start_code = "\r"
+
 pub const clock_frames = [
   "🕛", "🕐", "🕑", "🕒", "🕓", "🕔", "🕕", "🕖", "🕗", "🕘",
   "🕙", "🕚",
@@ -75,28 +79,27 @@ pub fn set_colour(spinner: Spinner, colour: fn(String) -> String) -> Nil {
   })
 }
 
-/// Stop the spinner.
+/// Stop the spinner, clearing the terminal line and showing the cursor. You
+/// may want to print a success message after this.
 ///
 /// This should be called before your program ends to re-enable the terminal
 /// cursor.
 ///
 pub fn stop(spinner: Spinner) -> Nil {
   repeatedly.stop(spinner.repeater)
-  // Show cursor
-  io.println("\u{001b}[?25h")
+  let show_cursor = "\u{001b}[?25h"
+  io.print(clear_line_code <> go_to_start_code <> show_cursor)
 }
 
 fn print(frames: Array(String), state: State, index: Int) -> Nil {
   let hide_cursor = "\u{001b}[?25l"
-  let clear_line = "\u{001b}[2K"
-  let go_to_start = "\r"
   io.print(
     hide_cursor
-      <> clear_line
-      <> go_to_start
-      <> state.colour(frame(frames, index))
-      <> " "
-      <> state.text,
+    <> clear_line_code
+    <> go_to_start_code
+    <> state.colour(frame(frames, index))
+    <> " "
+    <> state.text,
   )
 }
 

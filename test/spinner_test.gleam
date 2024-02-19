@@ -1,5 +1,6 @@
 import gleam/erlang/process
 import gleam_community/ansi
+import gleam/io
 import spinner
 
 pub fn main() {
@@ -22,6 +23,7 @@ pub fn main() {
 
   process.sleep(1000)
   spinner.stop(spinner)
+  io.println("✅ Done!")
 }
 
 pub const phrases = [
