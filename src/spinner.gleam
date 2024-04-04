@@ -46,7 +46,7 @@ pub opaque type Builder {
 /// JavaScript task.
 ///
 pub fn new(text: String) -> Builder {
-  Builder(snake_frames, text, ansi.pink)
+  Builder(snake_frames, text, ansi.magenta)
 }
 
 pub fn with_frames(builder: Builder, frames: List(String)) -> Builder {
