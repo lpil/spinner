@@ -1,7 +1,8 @@
 # Changelog
 
-## Unreleased
+## v1.2.0 - 2024-11-06
 
+- Relaxed dependency requirements.
 - The default color is now `ansi.magenta` instead of `ansi.pink`.
 
 ## v1.1.0 - 2024-02-19
