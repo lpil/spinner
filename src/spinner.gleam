@@ -1,7 +1,7 @@
+import gleam/io
+import gleam_community/ansi
 import glearray.{type Array}
 import repeatedly.{type Repeater}
-import gleam_community/ansi
-import gleam/io
 
 const clear_line_code = "\u{001b}[2K"
 
@@ -55,6 +55,14 @@ pub fn with_frames(builder: Builder, frames: List(String)) -> Builder {
 
 pub fn with_colour(builder: Builder, colour: fn(String) -> String) -> Builder {
   Builder(..builder, colour: colour)
+}
+
+pub fn with_spinner(builder: Builder, context: fn(Spinner) -> a) {
+  let spinner = start(builder)
+
+  context(spinner)
+
+  stop(spinner)
 }
 
 pub fn start(builder: Builder) -> Spinner {

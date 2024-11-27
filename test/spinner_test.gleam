@@ -1,9 +1,17 @@
 import gleam/erlang/process
-import gleam_community/ansi
 import gleam/io
+import gleam_community/ansi
 import spinner
 
 pub fn main() {
+  start_test()
+  io.println("✅ Done!")
+
+  with_spinner_test()
+  io.println("✅ Done!")
+}
+
+fn start_test() {
   let spinner =
     spinner.new("Baking Bread for Toasters")
     |> spinner.with_colour(ansi.cyan)
@@ -14,16 +22,28 @@ pub fn main() {
   spinner.set_colour(spinner, ansi.pink)
 
   process.sleep(1000)
-  spinner.set_text(spinner, "Routing Neural Network Infanstructure")
-  spinner.set_colour(spinner, ansi.yellow)
-
-  process.sleep(1000)
   spinner.set_text(spinner, "Timing Temperature Transference")
   spinner.set_colour(spinner, ansi.blue)
 
   process.sleep(1000)
   spinner.stop(spinner)
-  io.println("✅ Done!")
+}
+
+fn with_spinner_test() {
+  use spinner <- spinner.with_spinner(
+    spinner.new("Activating Deviance Threshold")
+    |> spinner.with_colour(ansi.green),
+  )
+
+  process.sleep(1000)
+  spinner.set_text(spinner, "Routing Neural Network Infanstructure")
+  spinner.set_colour(spinner, ansi.yellow)
+
+  process.sleep(1000)
+  spinner.set_text(spinner, "Extrapolating Empire Eigenvectors")
+  spinner.set_colour(spinner, ansi.red)
+
+  process.sleep(1000)
 }
 
 pub const phrases = [

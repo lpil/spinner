@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Added `with_spinner` for callback based usage.
+
 ## v1.2.0 - 2024-11-06
 
 - Relaxed dependency requirements.
