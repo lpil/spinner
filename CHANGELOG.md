@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v1.3.0 - 2024-12-03
 
 - Added `with_spinner` for callback based usage.
 
