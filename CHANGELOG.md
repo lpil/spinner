@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.1 - 2025-01-08
+
+- Dependency requirement for `glearray` has been relaxed to permit v1 or v2.
+
 ## v1.3.0 - 2024-12-03
 
 - Added `with_spinner` for callback based usage.
